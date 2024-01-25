@@ -23,8 +23,9 @@ Route::get('/bundana', function () {
     // $response = Mnotify::to("0542345921")->message("Hello, this is a test message")->send();
     //  $response = Mnotify::to("0542345921")->message("Hello, this is a test message")->send();
      $response = new Mnotify();
+     $res = $response->checkSMSBalance('v2');
     //  $response->newKeys(['apiKey' => 'ss', 'sender_id' =>'ss']);
-    return $response->registerSenderId('BundanaTech', '0542345921'); 
+    return json_decode($res, true); 
     
     // You can return the response or handle it as needed
     // return $response;
