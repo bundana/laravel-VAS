@@ -22,11 +22,10 @@ Route::get('/bundana', function () {
     // Create an instance of Mnotify, set the recipient, sender, and message, then send ->from("andul")
     // $response = Mnotify::to("0542345921")->message("Hello, this is a test message")->send();
     //  $response = Mnotify::to("0542345921")->message("Hello, this is a test message")->send();
-    //  $response = new Mnotify();
+     $response = new Mnotify();
     //  $response->newKeys(['apiKey' => 'ss', 'sender_id' =>'ss']);
-    $response = Mnotify::sendBulk(["0206611760" => "message1", "0542345921" => "message2"]);
-
-    dd($response);
+    return $response->registerSenderId('BundanaTech', '0542345921'); 
+    
     // You can return the response or handle it as needed
-    return $response;
+    // return $response;
 });
