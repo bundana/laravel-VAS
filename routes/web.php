@@ -24,7 +24,7 @@ Route::get('/bundana', function () {
     //  $response = Mnotify::to("0542345921")->message("Hello, this is a test message")->send();
     //  $response = new Mnotify();
     //  $response->newKeys(['apiKey' => 'ss', 'sender_id' =>'ss']);
-    $response = Mnotify::to("0542345921")->message("Hello, this is a test message")->send();
+    $response = Mnotify::sendBulk(["0206611760" => "message1", "0542345921" => "message2"]);
 
     dd($response);
     // You can return the response or handle it as needed
